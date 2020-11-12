@@ -26,8 +26,7 @@ SECRET_KEY = 'eei+sodoz@aa)%xd=_1zx)(4n7_&rpn)&&_^)%x(v2y4bu#()3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://ai21672blog.herokuapp.com', '127.0.0.1']
-
+ALLOWED_HOSTS = ['ai21672blog.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
