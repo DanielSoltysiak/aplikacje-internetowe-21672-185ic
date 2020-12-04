@@ -22,3 +22,4 @@ urlpatterns = [
     path( 'oauth/', include('social_django.urls', namespace='social')),
 ]
 #Valid OAuth Redirect URIs = adres serwera z https/oauth/complete/facebook/
+# https://ai21672blog.herokuapp.com/oauth/complete/facebook/
