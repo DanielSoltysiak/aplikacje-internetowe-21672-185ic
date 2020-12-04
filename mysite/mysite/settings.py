@@ -26,7 +26,7 @@ SECRET_KEY = 'eei+sodoz@aa)%xd=_1zx)(4n7_&rpn)&&_^)%x(v2y4bu#()3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ai21672blog.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['ai21672blog.herokuapp.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -38,8 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'social_django',
+
     'blog'
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +61,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -66,6 +78,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -125,3 +140,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join( BASE_DIR, 'staticfiles' )
 LOGIN_REDIRECT_URL = '/profile/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
+
+SOCIAL_AUTH_GITHUB_KEY = 'c684afc56f1d723004a0'
+SOCIAL_AUTH_GITHUB_SECRET = 'b196a19da858c5acaa434bd1069a08d916c9b299'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '2767837806766066'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '8df0e7457a5bce4de243f3cc90debc64'  # App Secret
