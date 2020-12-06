@@ -149,3 +149,15 @@ SOCIAL_AUTH_GITHUB_SECRET = 'b196a19da858c5acaa434bd1069a08d916c9b299'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '2767837806766066'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '8df0e7457a5bce4de243f3cc90debc64'  # App Secret
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
