@@ -1,0 +1,6 @@
+*__pycache__*
+venv
+dump.rdb
+image_parroter/media
+*.pid
+*.sock
