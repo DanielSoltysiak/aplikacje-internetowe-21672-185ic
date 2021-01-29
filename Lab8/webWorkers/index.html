@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>WebWorkers Daniel Sołtysiak</title>
+</head>
+<body>
+    <h1>Ciąg Fibonacciego</h1>
+    <p>Podaj n:</p>
+    <input type="number" id="nFib" required></input>
+    <button onclick="startWorkerFib()">Oblicz</button> 
+    <p>Wyrazy ciągu: <output id="resultFib"></output></p>
+    <br>
+
+    <h1>Silnia</h1>
+    <p>Podaj n:</p>
+    <input type="number" id="nFac" required></input>
+    <button onclick="startWorkerFac()">Oblicz</button>
+    <p>Wynik:<output id="resultFac"></output></p>
+
+    <script src="index.js"></script>
+</body>
+</html>
